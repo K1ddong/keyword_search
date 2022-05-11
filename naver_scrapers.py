@@ -30,13 +30,22 @@ class naver_shopping:
         item_data = []
         for item in items:
 
-            attributeValue = item['attributeValue']
-            brand = item['brand']
+            try:
+                attributeValue = item['attributeValue']
+            except:
+                attributeValue = '정보 없음'
+            try:
+                brand = item['brand']
+            except:
+                brand = '정보 없음'
             category1Name = item['category1Name']
             category2Name = item['category2Name']
             category3Name = item['category3Name']
             category4Name = item['category4Name']
-            characterValue = item['characterValue']
+            try:
+                characterValue = item['characterValue']
+            except:
+                characterValue = '정보 없음'
             lowPrice = item['lowPrice']
             mobileLowPrice = item['mobileLowPrice']
             productName = item['productName']

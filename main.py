@@ -135,7 +135,6 @@ def update_output(n_clicks, value):
 
         ####---------네이버-----------###
 
-        naver_item_info['브랜드'] = naver_item_info['상품명'].apply(brand_from_title)
         naver_avg_price = round(naver_item_info['가격(원)'].mean())
         card_naver_avg_price = [
             dbc.CardHeader("네이버 top31 평균 가격"),
@@ -364,6 +363,7 @@ def update_output(n_clicks, value):
                                 'whiteSpace':'normal'},
                             fluid = False)
             ])]),
+        html.Hr(style = {'border':'1px'}),
         html.Div(id = 'shopee_product', children = [
             html.H3('쇼피 상품 분석 결과 : ', style = {'margin-left':'65px',
                                                     'margin-bottom':'30px'}),
@@ -384,6 +384,13 @@ def update_output(n_clicks, value):
                                 'whiteSpace':'normal'},
                             fluid = False)
                 ])]),
+        html.Hr(style = {'border':'1px'}),
+        html.Div(id = 'google_keyword', children =[
+        html.H3('구글 키워드 분석 결과 : ', style = {'margin-left':'65px',
+                                                'margin-bottom':'30px'}),
+        
+        
+        ]),
         html.Div(id = 'google_search', children = [
             dbc.Container([
                 dbc.Row([
@@ -401,13 +408,7 @@ def update_output(n_clicks, value):
         html.Hr(style = {'border':'1px'}),
             
         html.Br(),
-        html.Hr(style = {'border':'1px'}),
-        html.Div(id = 'google_keyword', children =[
-        html.H3('구글 키워드 분석 결과 : ', style = {'margin-left':'65px',
-                                                'margin-bottom':'30px'}),
-        
-        
-        ])], style = {'margin-top':'20px'})
+        ], style = {'margin-top':'20px'})
 
 
         return app.layout
